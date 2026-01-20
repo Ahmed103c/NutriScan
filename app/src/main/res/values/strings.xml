@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NutriScan</string>
+    <string name="main_header">Nutri Score</string>
 </resources>
