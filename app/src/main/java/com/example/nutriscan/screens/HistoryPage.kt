@@ -1,22 +1,30 @@
 package com.example.nutriscan.screens
 
-import androidx.compose.material3.*
+
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
+import com.example.nutriscan.R
+import com.example.nutriscan.layouts.MainLayout
+import com.example.nutriscan.ui.theme.PrimaryButton
 
 @Composable
 fun HistoryPage(
     retour: () -> Unit
 ) {
+    MainLayout(mainTitle = "Nutri Score", secondTitle = "History Page") {
+    }
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center
     ) {
-        Text("HistoryPage Screen")
+        PrimaryButton(
+            title = "Return",
+            onClick = retour,
+            icon = ImageVector.vectorResource(id = R.drawable.ic_back)
 
-        Button(onClick = retour) {
-            Text("retour")
-        }
+        )
     }
 }

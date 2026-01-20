@@ -1,10 +1,14 @@
 package com.example.nutriscan.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
+import com.example.nutriscan.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -12,7 +16,7 @@ val Typography = Typography(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 24.sp,
+        lineHeight = 85.sp,
         letterSpacing = 0.5.sp
     )
     /* Other default text styles to override
@@ -32,3 +36,44 @@ val Typography = Typography(
     )
     */
 )
+
+val RedHatDisplay = FontFamily(
+    Font(R.font.redhatdisplayregular, FontWeight.Normal),
+    Font(R.font.redhatdisplaybold, FontWeight.Bold)
+)
+
+val TitleTextStyle = TextStyle(
+    fontFamily = RedHatDisplay,
+    fontSize = 65.sp,
+    fontWeight = FontWeight.Bold,
+    lineHeight = 85.sp,
+    color = Color.Black,
+    textAlign = TextAlign.Start
+)
+
+val SecondTitleStyle = TextStyle(
+    fontFamily = RedHatDisplay,
+    fontSize = 36.sp,
+    fontWeight = FontWeight.Bold,
+    lineHeight = 85.sp,
+    color = Color.Black,
+    textAlign = TextAlign.Start
+)
+
+val MainButtonTextStyle = TextStyle(
+    fontFamily = RedHatDisplay,
+    fontWeight = FontWeight.Bold,
+    fontSize = 30.sp,
+    color = Color.Black,
+    textAlign = TextAlign.Start
+)
+
+
+
+
+
+
+
+
+
+
