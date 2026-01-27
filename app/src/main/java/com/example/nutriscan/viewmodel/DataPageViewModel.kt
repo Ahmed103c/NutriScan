@@ -1,5 +1,6 @@
 package com.example.nutriscan.viewmodel
 
+import android.os.Vibrator
 import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -20,6 +21,10 @@ class DataPageViewModel : ViewModel() {
                 Log.d("NutritionData", "Réponse reçue = $response")
                 Log.d("API", "Product = ${response.product}")
                 _nutritionData.value = response
+                val timing: LongArray = longArrayOf(50, 50)
+                val amplitudes: IntArray = intArrayOf(33, 51)
+                val repatIndex = -1
+
             }catch (e: Exception){
                 Log.e("NutritionData","Erreur Data API",e)
             }

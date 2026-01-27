@@ -49,13 +49,13 @@ android {
 
 dependencies {
     // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation(libs.retrofit)
     // Converter JSON (Gson)
-    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation(libs.converter.gson)
     // OkHttp (client HTTP)
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation(libs.okhttp)
     // Logging (optionnel mais très utile)
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation(libs.logging.interceptor)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.core.ktx)
@@ -73,4 +73,17 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+    //Utiliser pour les le scan des barcode
+    implementation(libs.barcode.scanning)
+
+    // CameraX core library using the camera2 implementation
+    implementation ( libs.androidx.camera.core)
+    implementation (libs.androidx.camera.camera2)
+    implementation (libs.androidx.camera.lifecycle)
+    implementation (libs.androidx.camera.video)
+    implementation (libs.androidx.camera.view)
+    implementation (libs.androidx.camera.mlkit.vision)
+    implementation (libs.androidx.camera.extensions)
+
+
 }
