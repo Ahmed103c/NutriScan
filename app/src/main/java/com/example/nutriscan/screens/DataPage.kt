@@ -3,6 +3,11 @@ package com.example.nutriscan.screens
 
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.layout.*
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
@@ -12,12 +17,14 @@ import com.example.nutriscan.ui.theme.PrimaryButton
 
 @Composable
 fun DataPage(
-    retour: () -> Unit
+    retour: () -> Unit,
+    viewModel: DataPageViewModel = viewModel()
 ) {
     MainLayout(mainTitle = "Nutri Score", secondTitle = "Data Page") {
     }
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize().padding(16.dp),
+
         verticalArrangement = Arrangement.Center
     ) {
 
@@ -28,4 +35,16 @@ fun DataPage(
 
         )
     }
+}
+
+@Composable
+fun GetNutritionData(viewModel: DataPageViewModel) {
+
+    val nutrition by viewModel.nutritionData
+
+    nutrition?.let { product ->
+        Column {
+            Text("Nom: ${product.product?.productName}")
+        }
+    } ?: Text("Aucune donnée")
 }
